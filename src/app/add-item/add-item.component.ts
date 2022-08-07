@@ -19,7 +19,9 @@ export class AddItemComponent implements OnInit {
   }
 
   addItem(item: NgModel): void {
-    this.listDataService.addListItem(item.value);
+    const regex = /[^\w\s]/gi;
+    const cleanItem = item.value.replace(regex, '');
+    this.listDataService.addListItem(cleanItem);
   }
 
   setMode(mode: string): void {
