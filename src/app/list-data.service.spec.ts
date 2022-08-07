@@ -13,4 +13,8 @@ describe('ListDataService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return an array', () => {
+    expect(service.listItems).toBeInstanceOf(Array);
+  });
 });
