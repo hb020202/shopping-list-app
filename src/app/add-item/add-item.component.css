@@ -3,3 +3,12 @@
   font-family: Verdana, Geneva, sans-serif;
   color: white
 }
+button {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 50px;
+}
+.form-button {
+  width: 8em;
+}
+
