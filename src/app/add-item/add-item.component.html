@@ -3,8 +3,8 @@
   <p>Add to list:</p>
   <form>
     <label for="item">Item:</label>
-    <input id="item" type="text" name="item"/>
-    <button type="submit">Add</button>
+    <input id="item" type="text" name="item" ngModel #item="ngModel" required/>
+    <button type="submit" (click)="addItem(item)">Add</button>
     <button type="button">Cancel</button>
   </form>
 

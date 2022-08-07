@@ -11,7 +11,11 @@ export class ListDataService {
 
   constructor() { }
 
-  getListItems() {
+  getListItems(): string[] {
     return this.listItems;
+  }
+
+  addListItem(item: string): void {
+    this.listItems.splice(0, 0, {item});
   }
 }

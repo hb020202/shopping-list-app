@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { ListDataService } from '../list-data.service';
 
 @Component({
   selector: 'app-add-item',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private listDataService: ListDataService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  addItem(item: NgModel): void {
+    this.listDataService.addListItem(item.value);
+  }
 }
