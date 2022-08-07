@@ -1,11 +1,16 @@
 <div id="add-list">
 
+  <button *ngIf="mode == ''" (click)="setMode('add')">Add new item</button>
+
+  <div *ngIf="mode == 'add'">
+
   <p>Add to list:</p>
-  <form>
-    <label for="item">Item:</label>
-    <input id="item" type="text" name="item" ngModel #item="ngModel" required/>
-    <button type="submit" (click)="addItem(item)">Add</button>
-    <button type="button">Cancel</button>
-  </form>
+    <form>
+      <label for="item">Item:</label>
+      <input id="item" type="text" name="item" ngModel #item="ngModel" required/>
+      <button type="submit" (click)="addItem(item)">Add</button>
+      <button type="button" (click)="setMode('')">Cancel</button>
+    </form>
+  </div>
 
 </div>

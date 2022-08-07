@@ -8,15 +8,21 @@ import { ListDataService } from '../list-data.service';
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent implements OnInit {
+  mode: string;
 
   constructor(
     private listDataService: ListDataService
   ) { }
 
   ngOnInit(): void {
+    this.mode = '';
   }
 
   addItem(item: NgModel): void {
     this.listDataService.addListItem(item.value);
+  }
+
+  setMode(mode: string): void {
+    this.mode = mode;
   }
 }
