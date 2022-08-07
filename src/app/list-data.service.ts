@@ -5,5 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class ListDataService {
 
+  listItems: any[] = [
+    {item: 'Apples'}
+  ];
+
   constructor() { }
+
+  getListItems() {
+    return this.listItems;
+  }
 }

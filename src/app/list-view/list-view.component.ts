@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListDataService } from '../list-data.service';
 
 @Component({
   selector: 'app-list-view',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListViewComponent implements OnInit {
 
-  constructor() { }
+  listItems: any[] = [];
+
+  constructor(
+    private listDataService: ListDataService
+  ) { }
 
   ngOnInit(): void {
+    this.listItems = this.listDataService.getListItems();
   }
 
 }

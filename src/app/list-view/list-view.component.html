@@ -1,7 +1,5 @@
-<div id="list-content">
-  <ul>
-    <li>Apples</li>
-    <li>Bread</li>
-    <li>Coffee</li>
-  </ul>
+<div id="list-content" *ngFor="let item of listItems">
+  <span>{{item.item}}</span>
+
+
 </div>
