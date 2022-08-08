@@ -23,13 +23,13 @@ export class AddItemComponent implements OnInit {
       return;
     }
     this.setMode('');
-    const cleanItem = this.cleanItem(item);
+    const cleanItem = this.cleanItem(item.value);
     this.listDataService.addListItem(cleanItem);
   }
 
   cleanItem(item): string | undefined {
     const regex = /[^\w\s]/gi;
-    const cleanItem = item.value.replace(regex, '');
+    const cleanItem = item.replace(regex, '');
     return cleanItem;
   }
 

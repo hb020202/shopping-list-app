@@ -22,4 +22,8 @@ describe('AddItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return string with no special characters', () => {
+    expect(component.cleanItem('Apples<<?/*-+><!|...,``')).toBe('Apples');
+  });
 });
