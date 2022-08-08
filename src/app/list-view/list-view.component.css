@@ -13,3 +13,7 @@ button {
   border-radius: 40px;
   margin: 0.5em;
 }
+.strikethrough {
+  text-decoration: line-through;
+  color: #808080;
+}

@@ -21,4 +21,8 @@ export class ListViewComponent implements OnInit {
   removeItem(itemId: number): void {
     this.listItems.splice(itemId, 1);
   }
+
+  strikethroughItem(itemId: number): void {
+    document.getElementById(String(itemId))?.setAttribute('class', 'strikethrough');
+  }
 }
