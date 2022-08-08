@@ -1,7 +1,7 @@
-
 <div id="list-content">
-  <div *ngFor="let item of listItems">
+  <div *ngFor="let item of listItems; let i = index;" id="row-{{i}}">
   <span>{{item.item}}</span>
+    <button aria-label="remove item" (click)="removeItem(i)">☓</button>
 
   </div>
 </div>

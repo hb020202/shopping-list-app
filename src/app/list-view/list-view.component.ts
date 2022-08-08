@@ -18,4 +18,7 @@ export class ListViewComponent implements OnInit {
     this.listItems = this.listDataService.getListItems();
   }
 
+  removeItem(itemId: number): void {
+    this.listItems.splice(itemId, 1);
+  }
 }
