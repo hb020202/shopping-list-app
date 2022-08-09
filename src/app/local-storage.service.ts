@@ -28,6 +28,10 @@ export class LocalStorageService {
   }
 
   getLocalStorage(): string[] {
-    return JSON.parse(this.localStorage.getItem('list'));
+    if (this.localStorage.length === 0) {
+      return [];
+    } else {
+      return JSON.parse(this.localStorage.getItem('list'));
+    }
   }
 }
