@@ -18,6 +18,11 @@ export class LocalStorageService {
     this.setLocalStorage(this.listItems);
   }
 
+  removeListItem(itemId): void {
+    this.listItems.splice(itemId, 1);
+    this.setLocalStorage(this.listItems);
+  }
+
   setLocalStorage(list): void {
     this.localStorage.setItem('list', JSON.stringify(list));
   }

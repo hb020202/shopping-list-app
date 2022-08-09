@@ -23,7 +23,7 @@ export class ListViewComponent implements OnInit {
   }
 
   removeItem(itemId: number): void {
-    this.listItems.splice(itemId, 1);
+    this.localStorageService.removeListItem(itemId);
   }
 
   strikethroughItem(itemId: number): void {
