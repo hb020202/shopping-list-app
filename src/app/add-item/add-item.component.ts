@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { ListDataService } from '../list-data.service';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-add-item',
@@ -8,10 +8,11 @@ import { ListDataService } from '../list-data.service';
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent implements OnInit {
+
   mode: string;
 
   constructor(
-    private listDataService: ListDataService
+    private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class AddItemComponent implements OnInit {
     }
     this.setMode('');
     const cleanItem = this.cleanItem(item.value);
-    this.listDataService.addListItem(cleanItem);
+    this.localStorageService.addListItem(cleanItem);
   }
 
   cleanItem(item): string | undefined {

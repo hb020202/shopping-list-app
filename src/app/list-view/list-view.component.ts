@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListDataService } from '../list-data.service';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-list-view',
@@ -11,11 +11,15 @@ export class ListViewComponent implements OnInit {
   listItems: any[] = [];
 
   constructor(
-    private listDataService: ListDataService
+    private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
-    this.listItems = this.listDataService.getListItems();
+    this.getListItems();
+  }
+
+  getListItems(): void {
+    this.listItems = this.localStorageService.getLocalStorage();
   }
 
   removeItem(itemId: number): void {
