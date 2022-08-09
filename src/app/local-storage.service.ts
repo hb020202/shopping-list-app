@@ -19,7 +19,6 @@ export class LocalStorageService {
   }
 
   setLocalStorage(list): void {
-    console.log(this.localStorage = JSON.stringify(list));
     this.localStorage = JSON.stringify(list);
   }
 
