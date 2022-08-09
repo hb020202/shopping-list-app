@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class LocalStorageService {
 
-  localStorage;
-  listItems: any[] = [];
+  localStorage: Storage;
+  listItems: any[];
 
   constructor() {
     this.localStorage = window.localStorage;
@@ -19,10 +19,10 @@ export class LocalStorageService {
   }
 
   setLocalStorage(list): void {
-    this.localStorage = JSON.stringify(list);
+    this.localStorage.setItem('list', list);
   }
 
-  getLocalStorage(): string[] {
-    return this.localStorage.listItems;
+  getLocalStorage(): Storage {
+    return JSON.parse(this.localStorage.list);
   }
 }

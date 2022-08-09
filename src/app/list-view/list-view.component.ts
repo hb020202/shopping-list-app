@@ -8,7 +8,7 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class ListViewComponent implements OnInit {
 
-  listItems = this.localStorageService.getLocalStorage();
+  listItems: Storage;
 
   constructor(
     private localStorageService: LocalStorageService
@@ -19,7 +19,7 @@ export class ListViewComponent implements OnInit {
   }
 
   getListItems(): void {
-    this.listItems = this.localStorageService.listItems;
+    this.listItems = this.localStorageService.getLocalStorage();
   }
 
   removeItem(itemId: number): void {
